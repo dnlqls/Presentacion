@@ -1,0 +1,53 @@
+1 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 2 <html xmlns="http://www.w3.org/1999/xhtml">
+ 3   <head>
+ 4     <title>Test</title>
+ 5     <script language="javascript" type="text/javascript">
+ 6     //<![CDATA[
+ 7       var textoCargando = "Cargando";
+ 8       var numeroPuntos = 1;
+ 9       var maxPuntos = 3;
+10       var timerID = 0;
+11       var cargado = false;
+12       var tiempo = 500;
+13 
+14       function oculta() {
+15         document.getElementById("cargando").style.display = "none";
+16         cargado = true;
+17         clearTimeout(timerID);
+18       }
+19 
+20       function fTimer() {
+21         var puntos = "";
+22         for(i=0;i<numeroPuntos;i++) {
+23           puntos += ".";
+24         }
+25         if (numeroPuntos++ >= maxPuntos) {
+26           numeroPuntos = 0;
+27         }
+28         document.getElementById("cargando").innerHTML = textoCargando + puntos;
+29         if (!cargado) {
+30           timerID = setTimeout("fTimer()", 500);
+31         }
+32       }
+33     //]]>
+34     </script>
+35     <style type="text/css">
+36       #cargando {
+37         padding-left:2px; padding-right:2px; background-color:#CC0000; color:#FFFFFF; font-weight:bold;
+38         right:3px; top:3px; position:fixed;
+39       }
+40     </style>
+41   </head>
+42   <body>
+43     <div id="cargando">Cargando</div>
+44     <script language="javascript">
+45       timerID = setTimeout("fTimer()", 500);
+46     </script>
+47     1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />
+48     11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />
+49     21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />
+50     31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />
+51     41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br />
+52   </body>
+53 </html>
